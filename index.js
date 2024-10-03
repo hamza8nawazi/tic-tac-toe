@@ -15,11 +15,11 @@ const playerOneElement = document.getElementById('player-one');
 const playerTwoElement = document.getElementById('player-two');
 const cells = document.querySelectorAll('.cell');
 
+
 // Function to start the game
 function startGame() {
-    const playerOneInput = document.querySelector('.player-input input[placeholder="Player One"]').value;
-    const playerTwoInput = document.querySelector('.player-input input[placeholder="Player Two"]').value;
-
+  const playerOneInput = document.getElementById('player-one-input').value;
+  const playerTwoInput = document.getElementById('player-two-input').value;
     if (playerOneInput === '' || playerTwoInput === '') {
         alert('Please enter both player names.');
         return;
@@ -27,6 +27,7 @@ function startGame() {
 
     player1Name = playerOneInput;
     player2Name = playerTwoInput;
+
 
     playerOneElement.textContent = player1Name;
     playerTwoElement.textContent = player2Name;
