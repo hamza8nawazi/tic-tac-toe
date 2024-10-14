@@ -3,6 +3,7 @@ let player1Name = '';
 let player2Name = '';
 let gameBoard = ['', '', '', '', '', '', '', '', ''];
 let gameActive = true;
+const resultBox = document.getElementById('result-box');
 const winningCombinations = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
   [0, 3, 6], [1, 4, 7], [2, 5, 8],
@@ -14,9 +15,11 @@ const playerInputScreen = document.getElementById('player-input-screen');
 const playerOneElement = document.getElementById('player-one');
 const playerTwoElement = document.getElementById('player-two');
 const cells = document.querySelectorAll('.cell');
+const restartbtn = document.getElementById('restart-btn')
 
 
-// Function to start the game
+
+
 function startGame() {
   const playerOneInput = document.getElementById('player-one-input').value;
   const playerTwoInput = document.getElementById('player-two-input').value;
@@ -35,6 +38,71 @@ function startGame() {
     playerInputScreen.style.display = 'none';
     gameBoardScreen.style.display = 'block';
     
+    
     setActivePlayer('X');
+}
+
+function makeMove(index) {
+  const cell = document.getElementById('cell-' + index);
+
+  
+  if (cell.textContent !== '' || !gameActive) {
+      return;
+  }
+
+  cell.textContent = currentPlayer;
+
+  gameBoard[index] = currentPlayer;
+
+
+  checkWinner();
+  SwitchPlayer();
+}
+
+function checkWinner() {
+  let roundWon = false;
+  for (let i = 0; i < winningCombinations.length; i++) {
+      const [a, b, c] = winningCombinations[i];
+      if (gameBoard[a] === currentPlayer && gameBoard[b] === currentPlayer && gameBoard[c] === currentPlayer) {
+          roundWon = true;
+          break;
+      }
+  }
+  if (roundWon) {
+      showresult(`${currentPlayer === 'X' ? player1Name : player2Name} wins!`);
+      gameActive = false;
+  } else if (!gameBoard.includes('')) {
+      showresult("It's a draw!");
+      gameActive = false;
+  }
+}
+
+
+function SwitchPlayer() {
+  if (currentPlayer === 'X') {
+      setActivePlayer('O');
+  } else {
+      setActivePlayer('X');
+  }
+}
+
+function setActivePlayer(player) {
+  currentPlayer = player;
+  if (player === 'X') {
+      playerOneElement.classList.add('active');
+      playerTwoElement.classList.remove('active');
+  } else {
+      playerOneElement.classList.remove('active');
+      playerTwoElement.classList.add('active');
+  }
+}
+
+function showresult(message){
+  resultBox.textContent = message;
+  resultBox.style.display='inline-block'
+  restartbtn.style.display= 'inline-block'
+  gameBoardScreen.style.display='none'
+  
+  
 }
 

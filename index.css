@@ -1,4 +1,4 @@
-/* Basic Reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -29,7 +29,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-/* Player Input Screen */
+
 .player-input {
     display: flex;
     align-items: center;
@@ -62,6 +62,7 @@ h2 {
     background-color: #ffce00;
 }
 
+
 .start-button {
     background-color: #00e0b1;
     border: none;
@@ -70,7 +71,23 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    margin-right: 10px;
 }
+
+
+.restart-button {
+    background-color: #00e0b1;
+    border: none;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; 
+    
+}
+
+
 
 /* Game Board Screen */
 .players {
@@ -117,3 +134,22 @@ h2 {
 .cell.o {
     color: #ffce00;
 }
+
+
+#result-box {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #464242;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    color: #f8efef;
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+}
+
+

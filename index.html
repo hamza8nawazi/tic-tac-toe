@@ -21,6 +21,7 @@
         </div>
 
         <button class="start-button" onclick="startGame()">START GAME</button>
+        <!-- <button class="restart-button" id="restartbtn" onclick="restartGame()">RESTART GAME</button> -->
     </div>
 
     <div class="container" id="game-board-screen" style="display: none;">
@@ -30,16 +31,20 @@
         </div>
 
         <div class="game-board">
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
-            <div class="cell" onclick="makeMove(this)"></div>
+            <div class="cell" id="cell-0" onclick="makeMove(0)"></div>
+            <div class="cell" id="cell-1" onclick="makeMove(1)"></div>
+            <div class="cell" id="cell-2" onclick="makeMove(2)"></div>
+            <div class="cell" id="cell-3" onclick="makeMove(3)"></div>
+            <div class="cell" id="cell-4" onclick="makeMove(4)"></div>
+            <div class="cell" id="cell-5" onclick="makeMove(5)"></div>
+            <div class="cell" id="cell-6" onclick="makeMove(6)"></div>
+            <div class="cell" id="cell-7" onclick="makeMove(7)"></div>
+            <div class="cell" id="cell-8" onclick="makeMove(8)"></div>
         </div>
+        
+    </div>
+    <div id="result-box">
+        <button class="restart-button" id="restart-btn" onclick="restartGame()">RESTART GAME</button>
     </div>
     <script src="index.js"></script>
 
