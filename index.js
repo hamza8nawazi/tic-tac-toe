@@ -20,6 +20,7 @@ const restartbtn = document.getElementById('restart-btn')
 
 
 
+
 function startGame() {
   const playerOneInput = document.getElementById('player-one-input').value;
   const playerTwoInput = document.getElementById('player-two-input').value;
@@ -97,12 +98,29 @@ function setActivePlayer(player) {
   }
 }
 
+
+
 function showresult(message){
-  resultBox.textContent = message;
-  resultBox.style.display='inline-block'
-  restartbtn.style.display= 'inline-block'
-  gameBoardScreen.style.display='none'
-  
-  
+  const lastBoxMessage = document.getElementById('last-box-message');
+  lastBoxMessage.textContent= message;
+  gameBoardScreen.style.display = 'none';
+  resultBox.style.display = 'block';
 }
 
+
+function restartGame() {
+  
+  gameBoard = ['', '', '', '', '', '', '', '', ''];
+  gameActive = true;
+  currentPlayer = 'X';
+
+  
+  cells.forEach(cell => cell.textContent = '');
+
+ 
+  resultBox.style.display = 'none';
+  restartbtn.style.display = 'none'; 
+  gameBoardScreen.style.display = 'block'; 
+
+  setActivePlayer('X');
+}

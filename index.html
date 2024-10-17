@@ -20,8 +20,7 @@
             <input type="text" id="player-two-input" placeholder="Player Two">
         </div>
 
-        <button class="start-button" onclick="startGame()">START GAME</button>
-        <!-- <button class="restart-button" id="restartbtn" onclick="restartGame()">RESTART GAME</button> -->
+        <button class="start-button" id="start-btn" onclick="startGame()">START GAME</button>
     </div>
 
     <div class="container" id="game-board-screen" style="display: none;">
@@ -43,8 +42,9 @@
         </div>
         
     </div>
-    <div id="result-box">
-        <button class="restart-button" id="restart-btn" onclick="restartGame()">RESTART GAME</button>
+    <div id="result-box" style="display: none;">
+        <div id="last-box-message"></div>
+       <button class="restart-button" id="restart-btn" onclick="restartGame()">RESTART GAME</button>
     </div>
     <script src="index.js"></script>
 
