@@ -105,6 +105,8 @@ function showresult(message){
   lastBoxMessage.textContent= message;
   gameBoardScreen.style.display = 'none';
   resultBox.style.display = 'block';
+
+  restartbtn.style.display = 'block';
 }
 
 
